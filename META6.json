@@ -1,0 +1,25 @@
+{
+  "name": "Data::SyncMask",
+  "description": "Provides a means to mask PII with an id key to be shared among systems using that key",
+  "version": "0.0.1",
+  "perl": "6.*",
+  "authors": [
+    "Scott Sotka"
+  ],
+  "auth": "zef:ssotka",
+  "depends": [],
+  "build-depends": [],
+  "test-depends": [],
+  "provides": {
+    "Data::SyncMask": "lib/Data/SyncMask.rakumod"
+  },
+  "resources": [],
+  "license": "Artistic-2.0",
+  "tags": [
+    "Data",
+    "PII",
+    "Masking",
+    "Obfuscation"
+  ],
+  "source-url": "git://github.com/ssotka/Data-SyncMask.git"
+}

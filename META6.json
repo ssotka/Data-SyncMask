@@ -13,7 +13,10 @@
   "provides": {
     "Data::SyncMask": "lib/Data/SyncMask.rakumod"
   },
-  "resources": [],
+  "resources": [
+    "en-US-sure.csv",
+    "en-US-first.csv"
+  ],
   "license": "Artistic-2.0",
   "tags": [
     "Data",

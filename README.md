@@ -29,7 +29,7 @@ The data used to provide some of the above masked data is specific to geographic
 
 Example define the following mask: 
 ```
-{
+my $template = q( {
     "ID" : "external-id",
     "firstName" : "first-name",
     "lastName"  : "sur-name",
@@ -39,13 +39,22 @@ Example define the following mask:
     "city" : "city",
     "state" : "state-prov",
     "country" : "US",
-    "ssn" : { "type" : "en-US-gov-id",
+    "phone" : { "type" : "phone-number",
+                "format" : "(###) ###-####"
+                },
+    "ssn" : { "type" : "gov-id",
               "format" : "###-##-####"
               },
      "dob" : { "type" : "date",
                "formula" : "±5Y"
                },
      "ip-addr" : "ipv4-addr"
+} );
+my $db-file = './obfusbar.db'; # opens if exists else create
+my $locale = 'en-US'; # default
+my $sMask = Data::SyncMask.new( :$mask, $db-file, :$locale );
+for @list -> $record {
+    say $sMask.obfuscate($record);
 }
 ```
 Then send in the following data:
@@ -58,6 +67,7 @@ Then send in the following data:
     "city" : "San Francisco",
     "state" : "CA",
     "country" : "US",
+    "phone" : "6505558150",
     "ssn" : "317-24-9910",
      "dob" : "2233-03-22",
      "ip-addr" : "128.0.0.1"
@@ -73,6 +83,7 @@ Get the following back (and stored in the SQLite DB):
     "city" : "Phoenix",
     "state" : "AZ",
     "country" : "US",
+    "phone" : "(408) 555-1111",
     "ssn" : "111-22-1111",
     "dob" : "2228-12-01",
     "ip-addr" : "98.243.11.18"

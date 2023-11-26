@@ -7,11 +7,16 @@
     "Scott Sotka"
   ],
   "auth": "zef:ssotka",
-  "depends": [],
+  "depends": [
+    "DB::SQLite:ver<0.7>:auth<github:CurtTilmes>:api<1>",
+    "JSON::Fast"
+  ],
   "build-depends": [],
   "test-depends": [],
   "provides": {
-    "Data::SyncMask": "lib/Data/SyncMask.rakumod"
+    "Data::SyncMask": "lib/Data/SyncMask.rakumod",
+    "Data::first-names::en-US-first-name": "lib/Data/first-names/en-US-first-name.rakumod",
+    "first-name": "lib/first-name.rakumod"
   },
   "resources": [
     "en-US-sure.csv",
@@ -22,7 +27,7 @@
     "Data",
     "PII",
     "Masking",
-    "Obfuscation"
+    "Obfuscate"
   ],
   "source-url": "git://github.com/ssotka/Data-SyncMask.git"
 }

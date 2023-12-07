@@ -1,0 +1,9 @@
+on: [ push, pull_request ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test + coverage
+        with:
+          coverage: true
+        uses: JJ/raku-test-action@v2

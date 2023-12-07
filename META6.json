@@ -8,7 +8,7 @@
   ],
   "auth": "zef:ssotka",
   "depends": [
-    "DB::SQLite:ver<0.7>:auth<github:CurtTilmes>:api<1>",
+    "DB::SQLite",
     "JSON::Fast"
   ],
   "build-depends": [],

@@ -1,3 +1,4 @@
+name: Raku Test Workflow
 on: [ push, pull_request ]
 jobs:
   test:

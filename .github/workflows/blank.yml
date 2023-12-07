@@ -1,0 +1,10 @@
+name: Raku Test Workflow
+on: [ push, pull_request ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test + coverage
+        uses: JJ/raku-test-action@v2
+        with:
+          coverage: true

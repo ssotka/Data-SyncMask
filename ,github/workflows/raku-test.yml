@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test + coverage
+        uses: JJ/raku-test-action@v2
         with:
           coverage: true
-        uses: JJ/raku-test-action@v2
+        
